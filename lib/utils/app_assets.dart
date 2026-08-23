@@ -18,4 +18,6 @@ class AppAssets {
   static const String radioIcon = 'assets/images/radio_icon.png';
 
   static const String timeIcon = 'assets/images/time_icon.png';
+
+  static const String logo = 'assets/images/logo.png';
 }
