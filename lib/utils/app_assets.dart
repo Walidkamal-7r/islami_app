@@ -20,4 +20,16 @@ class AppAssets {
   static const String timeIcon = 'assets/images/time_icon.png';
 
   static const String logo = 'assets/images/logo.png';
+
+  static const String searchIcon = 'assets/images/search_icon.png';
+
+  static const String mostRecently = 'assets/images/most_recently.png';
+
+  static const String suraNum = 'assets/images/sura_num.png';
+
+  static const String bottomDecoration = 'assets/images/bottom_decoration.png';
+
+  static const String leftCorner = 'assets/images/left_corner.png';
+
+  static const String rightCorner = 'assets/images/right_corner.png';
 }
