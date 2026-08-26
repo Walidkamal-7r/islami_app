@@ -32,8 +32,7 @@ class _SuraContentState extends State<SuraContent> {
         padding: EdgeInsets.symmetric(vertical: height * 0.02),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppColors.primaryColor
-              : AppColors.transparentColor,
+              ? AppColors.primaryColor : AppColors.blackColor,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: AppColors.primaryColor, width: 2),
         ),
