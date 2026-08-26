@@ -32,4 +32,8 @@ class AppAssets {
   static const String leftCorner = 'assets/images/left_corner.png';
 
   static const String rightCorner = 'assets/images/right_corner.png';
+
+  static const String sebhaHead = 'assets/images/sebha_head.png';
+
+  static const String sebhaBody = 'assets/images/sebha_body.png';
 }
