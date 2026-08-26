@@ -6,6 +6,7 @@ import 'package:islami_app/ui/screens/home/tabs/sebha/sebha_tab.dart';
 import 'package:islami_app/ui/screens/home/tabs/time/time_tab.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: BottomNavigationBar(
                 selectedItemColor: AppColors.whiteColor,
                 unselectedItemColor: AppColors.blackColor,
+                selectedLabelStyle: AppStyles.bold12White,
                 currentIndex: selectedIndex,
                 onTap: (int index) {
                   selectedIndex = index;
