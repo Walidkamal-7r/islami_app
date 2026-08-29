@@ -17,7 +17,7 @@ class QuranTab extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: width * 0.04),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: height * 0.02,
+        spacing: height * 0.01,
         children: [
           TextField(
             cursorColor: AppColors.primaryColor,

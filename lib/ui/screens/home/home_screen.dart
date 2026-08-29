@@ -7,6 +7,7 @@ import 'package:islami_app/ui/screens/home/tabs/time/time_tab.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
 import 'package:islami_app/utils/app_styles.dart';
+import 'package:islami_app/utils/size_utils.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var height = SizeUtils.getHeight(context: context);
     return Stack(
       children: [
         Image.asset(backgroundImages[selectedIndex],
@@ -71,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
           body: SafeArea(
             child: Column(
               children: [
-                Image.asset(AppAssets.logo),
+                Image.asset(AppAssets.logo, height: height * 0.15,),
                 Expanded(child: tabsList[selectedIndex])
               ],
             ),
@@ -83,10 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   BottomNavigationBarItem _buildBottomNavBarItem(
       {required String iconName, required String label, required int index}) {
+    var width = SizeUtils.getWidth(context: context);
+    var height = SizeUtils.getHeight(context: context);
     return BottomNavigationBarItem(
         icon: selectedIndex == index ?
         Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+            padding: EdgeInsets.symmetric(
+                horizontal: width * 0.05, vertical: height * 0.006),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(66),
                 color: AppColors.lightBlackColor
