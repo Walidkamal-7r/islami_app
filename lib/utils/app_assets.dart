@@ -36,4 +36,12 @@ class AppAssets {
   static const String sebhaHead = 'assets/images/sebha_head.png';
 
   static const String sebhaBody = 'assets/images/sebha_body.png';
+
+  static const String vector1 = 'assets/images/vector1.png';
+
+  static const String vector2 = 'assets/images/vector2.png';
+
+  static const String on = 'assets/images/on.png';
+
+  static const String off = 'assets/images/off.png';
 }

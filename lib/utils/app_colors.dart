@@ -6,4 +6,5 @@ class AppColors {
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color transparentColor = Colors.transparent;
   static const Color lightBlackColor = Color(0x99202020);
+  static const Color lighterBlackColor = Color(0xB3202020);
 }
