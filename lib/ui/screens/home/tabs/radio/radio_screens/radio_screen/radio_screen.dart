@@ -25,7 +25,7 @@ class RadioScreen extends StatelessWidget {
           imagePath: AppAssets.off,
         ),
         RadioWidget(
-          radioName: 'Radio Addokali Mohammad Alalim',
+          radioName: 'Radio Addokali Mohammad',
           imagePath: AppAssets.off,
         ),
       ],

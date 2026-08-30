@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/model/quran_resources.dart';
-import 'package:islami_app/ui/screens/home/tabs/quran/sura_details/sura_content.dart';
 import 'package:islami_app/ui/screens/home/tabs/quran/sura_details1/sura_content1.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
 import 'package:islami_app/utils/app_styles.dart';
 import 'package:islami_app/utils/size_utils.dart';
 
-class SuraDetailsScreen extends StatefulWidget {
-  const SuraDetailsScreen({super.key});
+class SuraDetailsScreen1 extends StatefulWidget {
+  const SuraDetailsScreen1({super.key});
 
   @override
-  State<SuraDetailsScreen> createState() => _SuraDetailsScreenState();
+  State<SuraDetailsScreen1> createState() => _SuraDetailsScreen1State();
 }
 
-class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
-  List<String> verses = [];
-  bool isFirstDesign = true;
+class _SuraDetailsScreen1State extends State<SuraDetailsScreen1> {
+  String verses = '';
 
   @override
   Widget build(BuildContext context) {
@@ -37,20 +35,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           QuranResources.englishQuranSuraList[index],
           style: AppStyles.bold20Primary,
         ),
-        actions: [
-          InkWell(
-            onTap: () {
-              setState(() {
-                isFirstDesign = !isFirstDesign;
-              });
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.02),
-              child: Icon(Icons.swap_horizontal_circle_outlined,
-                color: AppColors.primaryColor,),
-            ),
-          )
-        ],
       ),
       body: Column(
         spacing: height * 0.02,
@@ -72,23 +56,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           Expanded(
             child: verses.isEmpty
                 ? Center(
-              child: CircularProgressIndicator(
-                color: AppColors.primaryColor,
-              ),
-            )
-                : isFirstDesign
-                ? ListView.separated(
-              itemBuilder: (context, int i) {
-                return SuraContent(content: verses[i], index: i);
-              },
-              separatorBuilder: (context, int i) {
-                return SizedBox(height: height * 0.02);
-              },
-              itemCount: verses.length,
-            )
-                : SingleChildScrollView(
-              child: SuraContent1(content: joinedVerses()),
-            ),
+                    child: CircularProgressIndicator(
+                      color: AppColors.primaryColor,
+                    ),
+                  )
+                : SingleChildScrollView(child: SuraContent1(content: verses)),
           ),
           Image.asset(AppAssets.bottomDecoration),
         ],
@@ -101,15 +73,10 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       "assets/files/quran/${index + 1}.txt",
     );
     List<String> lines = fileContent.split('\n');
-    verses = lines;
-    setState(() {});
-  }
-
-  String joinedVerses() {
-    List<String> numbered = [];
-    for (int i = 0; i < verses.length; i++) {
-      numbered.add('${verses[i]} [${i + 1}]');
+    for (int i = 0; i < lines.length; i++) {
+      lines[i] += '[${i + 1}]';
     }
-    return numbered.join('  ');
+    verses = lines.join('  ');
+    setState(() {});
   }
 }
