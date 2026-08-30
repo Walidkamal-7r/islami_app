@@ -44,4 +44,6 @@ class AppAssets {
   static const String on = 'assets/images/on.png';
 
   static const String off = 'assets/images/off.png';
+
+  static const String hadethCardBg = 'assets/images/hadethCardBg.png';
 }
